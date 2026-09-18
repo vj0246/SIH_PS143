@@ -1,0 +1,102 @@
+# Unified label schema and per-source remapping tables.
+#
+# See decisions.md D1, D2, D7.
+#
+# Any source value not present in that source's table is a hard error. Never add
+# a catch-all default here: a wrong entry must fail loudly rather than silently
+# collapse a class into sea.
+
+schema:
+  version: 1
+  classes:
+    - {id: 0, name: sea,        colour: [26, 35, 58],    description: "Open water, no surface film"}
+    - {id: 1, name: oil,        colour: [255, 214, 92],  description: "Oil slick or oil-like anthropogenic film"}
+    - {id: 2, name: look_alike, colour: [96, 176, 224],  description: "Biogenic film, low wind, rain cell, upwelling, internal wave, wake"}
+    - {id: 3, name: ship,       colour: [232, 90, 79],   description: "Vessel or bright point target"}
+    - {id: 4, name: land,       colour: [122, 138, 122], description: "Land, island, fixed structure"}
+  ignore_id: 255
+
+sources:
+
+  # ---------------------------------------------------------------------------
+  # MKLab / m4d.iti.gr, Krestenitis et al.
+  # Masks are 8 bit palette PNGs. Both the palette index and the resolved RGB
+  # triple are given so the adapter can validate whichever the file exposes.
+  #
+  # PROVISIONAL: transcribed from the publication, not yet checked against the
+  # real distribution. `oilspill verify` reports unmapped values.
+  # ---------------------------------------------------------------------------
+  mklab:
+    expresses: [sea, oil, look_alike, ship, land]
+    encoding: palette_png
+    provisional: true
+    index_map:
+      0: sea
+      1: oil
+      2: look_alike
+      3: ship
+      4: land
+    rgb_map:
+      "0,0,0":       sea
+      "0,255,255":   oil
+      "255,0,0":     look_alike
+      "153,76,0":    ship
+      "0,153,0":     land
+
+  # ---------------------------------------------------------------------------
+  # Zenodo "Sentinel-1 SAR Oil spill image dataset" Parts I, II, III.
+  # Binary masks. Everything that is not oil is unlabelled, and that remainder
+  # provably contains land, ships and look-alikes.
+  #
+  # D2: cannot express look_alike / ship / land, so the non-oil remainder is
+  # written as ignore, NOT as sea. See `background_policy`.
+  # ---------------------------------------------------------------------------
+  zenodo_s1:
+    expresses: [oil]
+    encoding: binary_raster
+    background_policy: ignore
+    index_map:
+      0: ignore
+      1: oil
+
+  # ---------------------------------------------------------------------------
+  # PANGAEA / ESSD 2025, Eastern Mediterranean oil slicks and look-alikes.
+  # Object annotated. The oil set carries oil objects; the no-oil set carries
+  # look-alike and other-phenomenon patches clustered by type.
+  #
+  # Oil objects and look-alike objects are both expressible, so the remainder
+  # inside an annotated patch is genuine sea. Land is not annotated, so a
+  # land mask must be supplied externally or those pixels stay ignore.
+  # ---------------------------------------------------------------------------
+  pangaea_emed:
+    expresses: [sea, oil, look_alike]
+    encoding: vector_objects
+    background_policy: sea
+    object_class_map:
+      oil: oil
+      oil_slick: oil
+      slick: oil
+      look_alike: look_alike
+      lookalike: look_alike
+      biogenic: look_alike
+      low_wind: look_alike
+      rain_cell: look_alike
+      upwelling: look_alike
+      internal_wave: look_alike
+      wind_front: look_alike
+      other: look_alike
+
+  # ---------------------------------------------------------------------------
+  # Scenes the team labels itself from CDSE, full schema.
+  # ---------------------------------------------------------------------------
+  inhouse:
+    expresses: [sea, oil, look_alike, ship, land]
+    encoding: index_raster
+    background_policy: sea
+    index_map:
+      0: sea
+      1: oil
+      2: look_alike
+      3: ship
+      4: land
+      255: ignore

@@ -1,0 +1,106 @@
+# Dataset source registry, consumed by `oilspill fetch`.
+#
+# Sizes are recorded so the operator can plan disk before starting. Checksums
+# are filled in on first successful download and then enforced on every later
+# run; a null checksum means "record on first fetch", not "skip verification".
+#
+# See decisions.md D9 for why this runs on the operator's machine.
+
+defaults:
+  root: data/raw
+  chunk_bytes: 8388608
+  retries: 5
+  backoff_seconds: 5
+
+sources:
+
+  zenodo_s1_part1:
+    adapter: zenodo_s1
+    licence: CC-BY-4.0
+    citation: "Sentinel-1 SAR Oil spill image dataset for train, validate, and test deep learning models. Part I. Zenodo. doi:10.5281/zenodo.8346860"
+    landing: https://zenodo.org/records/8346860
+    api: https://zenodo.org/api/records/8346860
+    discovery: zenodo_api        # enumerate files via the Zenodo record API
+    notes: >
+      1200 scenes, 2048x2048x2 (VV, VH) sigma0 in dB, GeoTIFF, plus binary oil
+      masks. Expect tens of GB uncompressed. Binary labels: see classes.yaml
+      background_policy: ignore.
+
+  zenodo_s1_part2:
+    adapter: zenodo_s1
+    licence: CC-BY-4.0
+    citation: "Sentinel-1 SAR Oil spill image dataset ... Part II. Zenodo. doi:10.5281/zenodo.8253899"
+    landing: https://zenodo.org/records/8253899
+    api: https://zenodo.org/api/records/8253899
+    discovery: zenodo_api
+
+  zenodo_s1_part3:
+    adapter: zenodo_s1
+    licence: CC-BY-4.0
+    citation: "Sentinel-1 SAR Oil spill image dataset ... Part III. Zenodo. doi:10.5281/zenodo.13761290"
+    landing: https://zenodo.org/records/13761290
+    api: https://zenodo.org/api/records/13761290
+    discovery: zenodo_api
+    notes: "Designated test partition by the authors. Keep it as a held-out source."
+
+  pangaea_emed:
+    adapter: pangaea_emed
+    licence: CC-BY-4.0
+    citation: >
+      Dataset of oil slicks, look-alikes and remarkable SAR signatures obtained
+      from Sentinel-1 data in the Eastern Mediterranean Sea.
+      Earth Syst. Sci. Data 17, 6807, 2025. doi:10.1594/PANGAEA.980773
+    landing: https://doi.pangaea.de/10.1594/PANGAEA.980773
+    discovery: pangaea_dataset
+    notes: >
+      3225 oil objects across 1365 patches, plus 2290 no-oil patches clustered
+      into 12 water and 5 coastal look-alike clusters. Eastern Mediterranean,
+      2019. The richest look-alike taxonomy available publicly.
+
+  mklab:
+    adapter: mklab
+    licence: "research use, request form"
+    citation: >
+      Krestenitis et al., Oil Spill Identification from Satellite Images Using
+      Deep Neural Networks. Remote Sensing 11(15) 1762, 2019.
+    landing: https://m4d.iti.gr/oil-spill-detection-dataset/
+    discovery: manual
+    manual_instructions: >
+      Complete the request form on the landing page. The maintainers email a
+      download link. Place the extracted archive at data/raw/mklab/ preserving
+      the distributed train/ and test/ subdirectories, then run
+      `oilspill verify --source mklab` before anything else: the palette in
+      configs/classes.yaml is provisional (decisions.md D7).
+
+  globalosd_sar:
+    adapter: null
+    licence: unknown
+    citation: >
+      Oil Slick Segmentation Using Deep Learning: A Framework for Real-World
+      Applications Based on Sentinel-1 Imagery. Journal of Remote Sensing, 2025.
+    landing: https://spj.science.org/doi/10.34133/remotesensing.0613
+    discovery: unavailable
+    notes: >
+      GlobalOSD-SAR. Announced as over 100000 annotated oil slick and look-alike
+      images drawn from 500000+ Sentinel-1 scenes, 2014 to 2021, globally
+      distributed. Reported IoU 82.63 to 95.99 percent using UNet++ with
+      co-training of oil and look-alike samples plus an iterative snowballing
+      loop. No public repository URL located as of this writing. This is the
+      single highest value source for a global model. Action: email the
+      corresponding author.
+
+# ---------------------------------------------------------------------------
+# Live Sentinel-1 acquisition. Not a static download; queried per area and date.
+# ---------------------------------------------------------------------------
+cdse:
+  catalogue: https://catalogue.dataspace.copernicus.eu/odata/v1
+  token_url: https://identity.dataspace.copernicus.eu/auth/realms/CDSE/protocol/openid-connect/token
+  download: https://zipper.dataspace.copernicus.eu/odata/v1
+  client_id: cdse-public
+  collection: SENTINEL-1
+  product_type: GRD
+  sensor_mode: IW
+  notes: >
+    Free registration at dataspace.copernicus.eu. Credentials are read from the
+    environment (CDSE_USERNAME, CDSE_PASSWORD) and are never written to disk or
+    to any config file in this repository.

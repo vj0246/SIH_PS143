@@ -1,0 +1,325 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2480 1620" width="2480" height="1620" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif">
+<defs>
+<marker id="a-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#15212b"/></marker>
+<marker id="a-depth" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#1a6485"/></marker>
+<marker id="a-steel" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2f4a57"/></marker>
+<marker id="a-slick" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#8a6626"/></marker>
+<marker id="a-caution" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a82a6e"/></marker>
+<marker id="a-moss" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2c7361"/></marker>
+<marker id="a-faint" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#7d8d94"/></marker>
+</defs>
+<rect x="0.0" y="0.0" width="2480.0" height="1620.0" fill="#f2f5f4" stroke="#f2f5f4" stroke-width="0"/>
+<text x="36.0" y="52.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="32" fill="#15212b" font-weight="bold">SAR Slick Attribution Pipeline</text>
+<text x="36.0" y="78.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#4a5b64">Detect oil on the ocean from satellite radar · drift it backward to an origin · rank the vessels that could have put it there</text>
+<text x="2444.0" y="48.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#a82a6e" font-weight="bold" text-anchor="end" letter-spacing="1.6">SOURCE AGNOSTIC BY DESIGN</text>
+<text x="2444.0" y="68.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64" text-anchor="end">radar cannot separate bunker fuel from crude cargo</text>
+<text x="2444.0" y="86.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64" text-anchor="end">source class is inferred from vessel identity and volume, never from the image</text>
+<line x1="36.0" y1="96.0" x2="2444.0" y2="96.0" stroke="#15212b" stroke-width="2"/>
+<text x="36.0" y="162.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#7d8d94" font-weight="bold" letter-spacing="2.2">EXTERNAL DATA</text>
+<text x="36.0" y="456.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#7d8d94" font-weight="bold" letter-spacing="2.2">PROCESSING</text>
+<text x="36.0" y="1244.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#7d8d94" font-weight="bold" letter-spacing="2.2">ARTIFACTS</text>
+<text x="36.0" y="1386.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#7d8d94" font-weight="bold" letter-spacing="2.2">EVALUATION</text>
+<rect x="36.0" y="118.0" width="530.0" height="44.0" fill="#1a6485" stroke="#1a6485" stroke-width="1"/>
+<text x="50.0" y="138.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11" fill="#ffffff" font-weight="bold" letter-spacing="1.8">STAGE 1</text>
+<text x="50.0" y="154.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="bold">Analysis Ready Data</text>
+<text x="552.0" y="147.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#ffffff" text-anchor="end" letter-spacing="1.2" opacity="0.88">BUILT  ·  95 tests</text>
+<rect x="36.0" y="176.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="47.0" y="193.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Sentinel-1 IW GRDH  ·  CDSE OData/STAC  ·  VV+VH  ·  10 m  ·  250 km swath</text>
+<rect x="36.0" y="206.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="47.0" y="223.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">NISAR L-band  ·  ASF DAAC  ·  public since Jul 2026</text>
+<rect x="36.0" y="236.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="47.0" y="253.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">RISAT-1A / EOS-04  ·  ISRO Bhoonidhi  ·  Indian Ocean sub-domain</text>
+<rect x="36.0" y="266.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="47.0" y="283.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">ERA5 10 m wind  ·  Copernicus CDS      GEBCO bathy  ·  GSHHG coast</text>
+<line x1="301.0" y1="298.0" x2="301.0" y2="464.0" stroke="#b9ac8c" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a-source_b)"/>
+<rect x="36.0" y="470.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="36.0" y="470.0" width="4" height="91.5" fill="#1a6485"/>
+<text x="52.0" y="494.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Ingest &amp; calibrate</text>
+<text x="52.0" y="513.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Apply precise orbit file</text>
+<text x="52.0" y="528.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Thermal noise removal (VH sits near NESZ)</text>
+<text x="52.0" y="544.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Radiometric calibration → sigma-nought</text>
+<rect x="36.0" y="587.5" width="530.0" height="108.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="36.0" y="587.5" width="4" height="108.5" fill="#1a6485"/>
+<text x="52.0" y="611.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Multilook &amp; geocode</text>
+<text x="52.0" y="630.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Boxcar average in LINEAR power, never in dB</text>
+<text x="52.0" y="646.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Speckle filter · ellipsoid/terrain correct · land mask</text>
+<text x="52.0" y="661.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Convert to dB only after averaging</text>
+<text x="52.0" y="682.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#1a6485" font-weight="bold">mean of log(intensity) is 2.5 dB below log(mean)</text>
+<rect x="36.0" y="722.0" width="530.0" height="108.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="36.0" y="722.0" width="4" height="108.5" fill="#1a6485"/>
+<text x="52.0" y="746.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">CMOD5.N wind retrieval</text>
+<text x="52.0" y="765.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Block means → percentile across block neighbourhood</text>
+<text x="52.0" y="780.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Bisection inverse, 40 iterations, deterministic</text>
+<text x="52.0" y="796.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">phi assumed and recorded, never silently dropped</text>
+<text x="52.0" y="816.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#1a6485" font-weight="bold">capped at 30 m/s: GMF turns over at 31.8 m/s</text>
+<rect x="36.0" y="856.5" width="530.0" height="91.5" fill="#dbe9ef" stroke="#1a6485" stroke-width="2.4"/>
+<text x="48.0" y="880.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#1a6485" font-weight="bold">Observability gate</text>
+<text x="48.0" y="899.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">3 m/s floor: glassy sea, everything is dark</text>
+<text x="48.0" y="915.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">10 m/s ceiling: wave breaking swamps damping</text>
+<text x="48.0" y="930.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">outside → not_observable, which is not a negative</text>
+<rect x="36.0" y="974.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="36.0" y="974.0" width="4" height="91.5" fill="#1a6485"/>
+<text x="52.0" y="998.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Feature stack builder</text>
+<text x="52.0" y="1017.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">vv_db   vh_db   incidence_deg   wind_ms</text>
+<text x="52.0" y="1032.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">damping_db   local_var_db   dist_land_km</text>
+<text x="52.0" y="1048.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">every channel selectable, so the ablation survives</text>
+<rect x="36.0" y="1091.5" width="530.0" height="108.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="36.0" y="1091.5" width="4" height="108.5" fill="#1a6485"/>
+<text x="52.0" y="1115.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Label unification</text>
+<text x="52.0" y="1134.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">5 classes + ignore(255) per source capability</text>
+<text x="52.0" y="1150.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">binary sources abstain, they do not assert sea</text>
+<text x="52.0" y="1165.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">undeclared value → hard error, never a default</text>
+<text x="52.0" y="1186.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#1a6485" font-weight="bold">D2: the ignore class is load bearing</text>
+<rect x="36.0" y="1226.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="36.0" y="1226.0" width="4" height="91.5" fill="#1a6485"/>
+<text x="52.0" y="1250.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Deterministic tiler &amp; splits</text>
+<text x="52.0" y="1269.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">256 px, 32 overlap, last tile flush to edge</text>
+<text x="52.0" y="1284.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">negatives kept at 0.15 by seeded blake2b hash</text>
+<text x="52.0" y="1300.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">splits blocked by scene / 1° cell / whole source</text>
+<line x1="301.0" y1="561.5" x2="301.0" y2="583.5" stroke="#1a6485" stroke-width="1.6" marker-end="url(#a-depth)"/>
+<line x1="301.0" y1="696.0" x2="301.0" y2="718.0" stroke="#1a6485" stroke-width="1.6" marker-end="url(#a-depth)"/>
+<line x1="301.0" y1="830.5" x2="301.0" y2="852.5" stroke="#1a6485" stroke-width="1.6" marker-end="url(#a-depth)"/>
+<line x1="301.0" y1="948.0" x2="301.0" y2="970.0" stroke="#1a6485" stroke-width="1.6" marker-end="url(#a-depth)"/>
+<line x1="301.0" y1="1065.5" x2="301.0" y2="1087.5" stroke="#1a6485" stroke-width="1.6" marker-end="url(#a-depth)"/>
+<line x1="301.0" y1="1200.0" x2="301.0" y2="1222.0" stroke="#1a6485" stroke-width="1.6" marker-end="url(#a-depth)"/>
+<rect x="36.0" y="1258.0" width="530.0" height="85.5" fill="#ffffff" stroke="#1a6485" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="50.0" y="1283.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#1a6485" font-weight="bold">ARD tile store + manifest</text>
+<text x="50.0" y="1303.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">npz shards, C×256×256 float32</text>
+<text x="50.0" y="1318.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">manifest.parquet · 1 row per tile</text>
+<text x="50.0" y="1334.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">geometry, class counts, wind stats, split</text>
+<line x1="301.0" y1="1317.5" x2="301.0" y2="1254.0" stroke="#1a6485" stroke-width="1.8" marker-end="url(#a-depth)"/>
+<rect x="662.0" y="118.0" width="530.0" height="44.0" fill="#2f4a57" stroke="#2f4a57" stroke-width="1"/>
+<text x="676.0" y="138.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11" fill="#ffffff" font-weight="bold" letter-spacing="1.8">STAGE 2</text>
+<text x="676.0" y="154.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="bold">Detection &amp; Verification</text>
+<text x="1178.0" y="147.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#ffffff" text-anchor="end" letter-spacing="1.2" opacity="0.88">DESIGNED</text>
+<rect x="662.0" y="176.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="673.0" y="193.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">MKLab 5-class benchmark  ·  request form  ·  palette provisional</text>
+<rect x="662.0" y="206.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="673.0" y="223.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Zenodo S1 Parts I–III  ·  3600 scenes  ·  binary labels only</text>
+<rect x="662.0" y="236.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="673.0" y="253.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">PANGAEA E. Med  ·  3225 oil objects  ·  12 look-alike clusters</text>
+<rect x="662.0" y="266.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="673.0" y="283.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">GlobalOSD-SAR  ·  100k+ global patches  ·  no repo URL, email authors</text>
+<rect x="662.0" y="296.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="673.0" y="313.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Static exclusion layer  ·  natural seeps, platforms, known wrecks</text>
+<line x1="927.0" y1="328.0" x2="927.0" y2="464.0" stroke="#b9ac8c" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a-source_b)"/>
+<rect x="662.0" y="470.0" width="530.0" height="108.5" fill="#dee5e8" stroke="#2f4a57" stroke-width="2.4"/>
+<text x="674.0" y="494.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#2f4a57" font-weight="bold">Five-class segmenter</text>
+<text x="674.0" y="513.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">UNet++ or SegFormer, ImageNet or SAR-SSL init</text>
+<text x="674.0" y="528.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">input: 7-channel tile, not bare intensity</text>
+<text x="674.0" y="544.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">oil and look-alike CO-TRAINED in one label space</text>
+<text x="674.0" y="564.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#2f4a57" font-weight="bold">binary framing never sees the discriminative boundary</text>
+<rect x="662.0" y="604.5" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="662.0" y="604.5" width="4" height="91.5" fill="#2f4a57"/>
+<text x="678.0" y="628.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Loss &amp; sampling</text>
+<text x="678.0" y="647.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Dice + focal, class weighted</text>
+<text x="678.0" y="663.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">ignore_index = 255` excludes unsupervised pixels</text>
+<text x="678.0" y="678.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">oil is under 1 percent of pixels, sample accordingly</text>
+<rect x="662.0" y="722.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="662.0" y="722.0" width="4" height="91.5" fill="#2f4a57"/>
+<text x="678.0" y="746.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Vectorise → object features</text>
+<text x="678.0" y="765.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">area, perimeter, major/minor axis, orientation</text>
+<text x="678.0" y="780.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">eccentricity, solidity, fractal dimension</text>
+<text x="678.0" y="796.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">damping ratio, GLCM texture, distance to lane</text>
+<rect x="662.0" y="839.5" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="662.0" y="839.5" width="4" height="91.5" fill="#2f4a57"/>
+<text x="678.0" y="863.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Look-alike rejector</text>
+<text x="678.0" y="882.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Gradient boosted trees on object features</text>
+<text x="678.0" y="898.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">sees context a pixel classifier cannot</text>
+<text x="678.0" y="913.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">linear high-aspect ⇒ moving discharge</text>
+<rect x="662.0" y="957.0" width="530.0" height="91.5" fill="#dee5e8" stroke="#2f4a57" stroke-width="2.4"/>
+<text x="674.0" y="981.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#2f4a57" font-weight="bold">Archive recurrence test</text>
+<text x="674.0" y="1000.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">same coordinates on &gt;30 percent of passes</text>
+<text x="674.0" y="1015.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">⇒ seep, platform or wreck, not a ship</text>
+<text x="674.0" y="1031.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">top false positive for vessel attribution</text>
+<rect x="662.0" y="1074.5" width="530.0" height="76.0" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="662.0" y="1074.5" width="4" height="76.0" fill="#2f4a57"/>
+<text x="678.0" y="1098.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Confidence threshold</text>
+<text x="678.0" y="1117.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">calibrated per wind bin and per region</text>
+<text x="678.0" y="1133.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">below tau → logged, not surfaced</text>
+<line x1="927.0" y1="578.5" x2="927.0" y2="600.5" stroke="#2f4a57" stroke-width="1.6" marker-end="url(#a-steel)"/>
+<line x1="927.0" y1="696.0" x2="927.0" y2="718.0" stroke="#2f4a57" stroke-width="1.6" marker-end="url(#a-steel)"/>
+<line x1="927.0" y1="813.5" x2="927.0" y2="835.5" stroke="#2f4a57" stroke-width="1.6" marker-end="url(#a-steel)"/>
+<line x1="927.0" y1="931.0" x2="927.0" y2="953.0" stroke="#2f4a57" stroke-width="1.6" marker-end="url(#a-steel)"/>
+<line x1="927.0" y1="1048.5" x2="927.0" y2="1070.5" stroke="#2f4a57" stroke-width="1.6" marker-end="url(#a-steel)"/>
+<rect x="662.0" y="1258.0" width="530.0" height="85.5" fill="#ffffff" stroke="#2f4a57" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="676.0" y="1283.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#2f4a57" font-weight="bold">Slick objects</text>
+<text x="676.0" y="1303.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">GeoJSON polygons + confidence</text>
+<text x="676.0" y="1318.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">geometry, damping and texture features</text>
+<text x="676.0" y="1334.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">look-alike probability retained</text>
+<line x1="927.0" y1="1150.5" x2="927.0" y2="1254.0" stroke="#2f4a57" stroke-width="1.8" marker-end="url(#a-steel)"/>
+<rect x="1288.0" y="118.0" width="530.0" height="44.0" fill="#8a6626" stroke="#8a6626" stroke-width="1"/>
+<text x="1302.0" y="138.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11" fill="#ffffff" font-weight="bold" letter-spacing="1.8">STAGE 3</text>
+<text x="1302.0" y="154.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="bold">Characterisation &amp; Drift</text>
+<text x="1804.0" y="147.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#ffffff" text-anchor="end" letter-spacing="1.2" opacity="0.88">DESIGNED</text>
+<rect x="1288.0" y="176.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1299.0" y="193.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">CMEMS GLOBAL_ANALYSISFORECAST_PHY_001_024  ·  1/12° currents</text>
+<rect x="1288.0" y="206.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1299.0" y="223.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">CMEMS WAV_001_027  ·  Stokes drift        ERA5  ·  10 m wind</text>
+<rect x="1288.0" y="236.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1299.0" y="253.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">NOAA ADIOS oil library  ·  ~1000 characterised oils</text>
+<rect x="1288.0" y="266.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1299.0" y="283.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Sentinel-2 / 3, Landsat 8-9  ·  opportunistic optical, cloud-free only</text>
+<line x1="1553.0" y1="298.0" x2="1553.0" y2="464.0" stroke="#b9ac8c" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a-source_b)"/>
+<rect x="1288.0" y="470.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1288.0" y="470.0" width="4" height="91.5" fill="#8a6626"/>
+<text x="1304.0" y="494.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Geometry metrics</text>
+<text x="1304.0" y="513.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">area, axes, orientation, eccentricity</text>
+<text x="1304.0" y="528.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">shape complexity, perimeter-to-area ratio</text>
+<text x="1304.0" y="544.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">compact ⇒ point release or wreck</text>
+<rect x="1288.0" y="587.5" width="530.0" height="108.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1288.0" y="587.5" width="4" height="108.5" fill="#8a6626"/>
+<text x="1304.0" y="611.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Thickness &amp; volume</text>
+<text x="1304.0" y="630.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">Bonn Agreement Oil Appearance Code banding</text>
+<text x="1304.0" y="646.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">sheen 0.04–0.3 µm … continuous colour &gt;200 µm</text>
+<text x="1304.0" y="661.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">OPTICAL ONLY · SAR gives presence, not thickness</text>
+<text x="1304.0" y="682.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#8a6626" font-weight="bold">uncertain by a factor of several, say so</text>
+<rect x="1288.0" y="722.0" width="530.0" height="108.5" fill="#f0e5cd" stroke="#8a6626" stroke-width="2.4"/>
+<text x="1300.0" y="746.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#8a6626" font-weight="bold">Behavioural class posterior</text>
+<text x="1300.0" y="765.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">non-persistent volatile | persistent light</text>
+<text x="1300.0" y="780.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">persistent heavy emulsifying | non-petroleum</text>
+<text x="1300.0" y="796.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">from damping, spreading, persistence, volume</text>
+<text x="1300.0" y="816.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#8a6626" font-weight="bold">a posterior over 4 classes, never a label</text>
+<rect x="1288.0" y="856.5" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1288.0" y="856.5" width="4" height="91.5" fill="#8a6626"/>
+<text x="1304.0" y="880.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">OpenOil backward ensemble</text>
+<text x="1304.0" y="899.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">N particles × M oil hypotheses × K forcing perturbations</text>
+<text x="1304.0" y="915.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">currents + windage(1–4.5%) + Stokes drift</text>
+<text x="1304.0" y="930.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">weathering from the ADIOS oil library</text>
+<rect x="1288.0" y="974.0" width="530.0" height="76.0" fill="#f0e5cd" stroke="#8a6626" stroke-width="2.4"/>
+<text x="1300.0" y="998.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#8a6626" font-weight="bold">Horizon check</text>
+<text x="1300.0" y="1017.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">beyond 12–24 h the origin field is too broad</text>
+<text x="1300.0" y="1032.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">→ origin_unresolvable, not 400 ranked ships</text>
+<rect x="1288.0" y="1076.0" width="530.0" height="76.0" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1288.0" y="1076.0" width="4" height="76.0" fill="#8a6626"/>
+<text x="1304.0" y="1100.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Age inference</text>
+<text x="1304.0" y="1119.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">no sensor measures slick age</text>
+<text x="1304.0" y="1134.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">run forward until predicted geometry matches</text>
+<line x1="1553.0" y1="561.5" x2="1553.0" y2="583.5" stroke="#8a6626" stroke-width="1.6" marker-end="url(#a-slick)"/>
+<line x1="1553.0" y1="696.0" x2="1553.0" y2="718.0" stroke="#8a6626" stroke-width="1.6" marker-end="url(#a-slick)"/>
+<line x1="1553.0" y1="830.5" x2="1553.0" y2="852.5" stroke="#8a6626" stroke-width="1.6" marker-end="url(#a-slick)"/>
+<line x1="1553.0" y1="948.0" x2="1553.0" y2="970.0" stroke="#8a6626" stroke-width="1.6" marker-end="url(#a-slick)"/>
+<line x1="1553.0" y1="1050.0" x2="1553.0" y2="1072.0" stroke="#8a6626" stroke-width="1.6" marker-end="url(#a-slick)"/>
+<rect x="1288.0" y="1258.0" width="530.0" height="85.5" fill="#ffffff" stroke="#8a6626" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="1302.0" y="1283.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#8a6626" font-weight="bold">Origin field + type posterior</text>
+<text x="1302.0" y="1303.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">P(x, y, t) NetCDF probability volume</text>
+<text x="1302.0" y="1318.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">4-class behavioural posterior</text>
+<text x="1302.0" y="1334.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">forward forecast for response planning</text>
+<line x1="1553.0" y1="1152.0" x2="1553.0" y2="1254.0" stroke="#8a6626" stroke-width="1.8" marker-end="url(#a-slick)"/>
+<rect x="1914.0" y="118.0" width="530.0" height="44.0" fill="#a82a6e" stroke="#a82a6e" stroke-width="1"/>
+<text x="1928.0" y="138.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11" fill="#ffffff" font-weight="bold" letter-spacing="1.8">STAGE 4</text>
+<text x="1928.0" y="154.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="15" fill="#ffffff" font-weight="bold">Attribution &amp; Interface</text>
+<text x="2430.0" y="147.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.5" fill="#ffffff" text-anchor="end" letter-spacing="1.2" opacity="0.88">DESIGNED</text>
+<rect x="1914.0" y="176.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1925.0" y="193.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Historic AIS  ·  Global Fishing Watch API  ·  free research access</text>
+<rect x="1914.0" y="206.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1925.0" y="223.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Danish Maritime Authority open AIS  ·  full raw, best for validation</text>
+<rect x="1914.0" y="236.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1925.0" y="253.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">MarineCadastre US  ·  Spire / Kpler commercial for Indian Ocean</text>
+<rect x="1914.0" y="266.0" width="530.0" height="26.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1"/>
+<text x="1925.0" y="283.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.2" fill="#4b4436">Vessel registry  ·  type, deadweight, laden draught, prior offences</text>
+<line x1="2179.0" y1="298.0" x2="2179.0" y2="464.0" stroke="#b9ac8c" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#a-source_b)"/>
+<rect x="1914.0" y="470.0" width="530.0" height="76.0" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1914.0" y="470.0" width="4" height="76.0" fill="#a82a6e"/>
+<text x="1930.0" y="494.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Spacetime AIS query</text>
+<text x="1930.0" y="513.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">select tracks intersecting the origin field support</text>
+<text x="1930.0" y="528.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">window set by the oil type's survival time</text>
+<rect x="1914.0" y="572.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1914.0" y="572.0" width="4" height="91.5" fill="#a82a6e"/>
+<text x="1930.0" y="596.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Traffic filter</text>
+<text x="1930.0" y="615.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">drop tracks inconsistent with the origin mass</text>
+<text x="1930.0" y="630.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">drop fixed infrastructure and known seeps</text>
+<text x="1930.0" y="646.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">keep AIS gaps: absence is itself evidence</text>
+<rect x="1914.0" y="689.5" width="530.0" height="108.5" fill="#f5dde9" stroke="#a82a6e" stroke-width="2.4"/>
+<text x="1926.0" y="713.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14.5" fill="#a82a6e" font-weight="bold">Forward re-simulation per candidate</text>
+<text x="1926.0" y="732.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">simulate a discharge from each candidate's own track</text>
+<text x="1926.0" y="748.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">score IoU against the slick actually observed</text>
+<text x="1926.0" y="763.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">turns a lookup into a hypothesis test</text>
+<text x="1926.0" y="784.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" fill="#a82a6e" font-weight="bold">this is what makes attribution defensible</text>
+<rect x="1914.0" y="824.0" width="530.0" height="91.5" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1914.0" y="824.0" width="4" height="91.5" fill="#a82a6e"/>
+<text x="1930.0" y="848.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Score fusion</text>
+<text x="1930.0" y="867.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">overlap · origin mass · track alignment</text>
+<text x="1930.0" y="882.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">vessel type &amp; laden prior · speed/course anomaly</text>
+<text x="1930.0" y="898.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">AIS gap at origin window · route deviation</text>
+<rect x="1914.0" y="941.5" width="530.0" height="76.0" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1914.0" y="941.5" width="4" height="76.0" fill="#a82a6e"/>
+<text x="1930.0" y="965.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Calibration</text>
+<text x="1930.0" y="984.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">isotonic fit on the synthetic closed loop</text>
+<text x="1930.0" y="1000.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">so a 0.8 score means 0.8 of the time</text>
+<rect x="1914.0" y="1043.5" width="530.0" height="76.0" fill="#ffffff" stroke="#c0cac8" stroke-width="1.3"/>
+<rect x="1914.0" y="1043.5" width="4" height="76.0" fill="#a82a6e"/>
+<text x="1930.0" y="1067.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#15212b" font-weight="bold">Operator interface</text>
+<text x="1930.0" y="1086.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">map, time slider, drift cones, evidence panel</text>
+<text x="1930.0" y="1102.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">observability shown as a first-class state</text>
+<line x1="2179.0" y1="546.0" x2="2179.0" y2="568.0" stroke="#a82a6e" stroke-width="1.6" marker-end="url(#a-caution)"/>
+<line x1="2179.0" y1="663.5" x2="2179.0" y2="685.5" stroke="#a82a6e" stroke-width="1.6" marker-end="url(#a-caution)"/>
+<line x1="2179.0" y1="798.0" x2="2179.0" y2="820.0" stroke="#a82a6e" stroke-width="1.6" marker-end="url(#a-caution)"/>
+<line x1="2179.0" y1="915.5" x2="2179.0" y2="937.5" stroke="#a82a6e" stroke-width="1.6" marker-end="url(#a-caution)"/>
+<line x1="2179.0" y1="1017.5" x2="2179.0" y2="1039.5" stroke="#a82a6e" stroke-width="1.6" marker-end="url(#a-caution)"/>
+<rect x="1914.0" y="1258.0" width="530.0" height="85.5" fill="#ffffff" stroke="#a82a6e" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="1928.0" y="1283.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#a82a6e" font-weight="bold">Ranked suspects</text>
+<text x="1928.0" y="1303.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">MMSI, score, confidence interval</text>
+<text x="1928.0" y="1318.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.4" fill="#4a5b64">evidence trail per scoring term</text>
+<text x="1928.0" y="1334.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#4a5b64">never a verdict, always a ranking</text>
+<line x1="2179.0" y1="1119.5" x2="2179.0" y2="1254.0" stroke="#a82a6e" stroke-width="1.8" marker-end="url(#a-caution)"/>
+<line x1="570.0" y1="1292.0" x2="656.0" y2="1292.0" stroke="#15212b" stroke-width="2.4" marker-end="url(#a-ink)"/>
+<text x="614.0" y="1312.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.2" fill="#15212b" font-weight="bold" text-anchor="middle">ARD tiles</text>
+<text x="614.0" y="1326.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.2" fill="#15212b" font-weight="bold" text-anchor="middle">+ manifest</text>
+<line x1="1196.0" y1="1292.0" x2="1282.0" y2="1292.0" stroke="#15212b" stroke-width="2.4" marker-end="url(#a-ink)"/>
+<text x="1240.0" y="1312.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.2" fill="#15212b" font-weight="bold" text-anchor="middle">verified</text>
+<text x="1240.0" y="1326.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.2" fill="#15212b" font-weight="bold" text-anchor="middle">slick objects</text>
+<line x1="1822.0" y1="1292.0" x2="1908.0" y2="1292.0" stroke="#15212b" stroke-width="2.4" marker-end="url(#a-ink)"/>
+<text x="1866.0" y="1312.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.2" fill="#15212b" font-weight="bold" text-anchor="middle">origin field</text>
+<text x="1866.0" y="1326.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="10.2" fill="#15212b" font-weight="bold" text-anchor="middle">+ posterior</text>
+<path d="M 1914 870 L 1866 870 L 1866 776 L 1822 776" stroke="#a82a6e" stroke-width="3" fill="none" marker-end="url(#a-caution)"/>
+<circle cx="1866" cy="870" r="4.5" fill="#a82a6e"/>
+<text x="1866.0" y="396.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="14" fill="#a82a6e" font-weight="bold" text-anchor="middle">vessel type constrains oil type constrains drift constrains the candidate set</text>
+<text x="1866.0" y="415.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12" fill="#a82a6e" text-anchor="middle">this loop is the architecture — not detect, then track, then match</text>
+<line x1="1866.0" y1="422.0" x2="1866.0" y2="861.8" stroke="#a82a6e" stroke-width="1.4" stroke-dasharray="4 3"/>
+<path d="M 1192 1003 L 1240 1003 L 1240 279 L 1196 279" stroke="#2f4a57" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#a-steel)"/>
+<text x="1180.0" y="396.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="12.5" fill="#2f4a57" font-weight="bold" text-anchor="end">snowball loop</text>
+<text x="1180.0" y="414.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64" text-anchor="end">verified detections re-enter the training corpus</text>
+<line x1="1188.0" y1="404.0" x2="1240.0" y2="404.0" stroke="#2f4a57" stroke-width="1.2" stroke-dasharray="4 3"/>
+<rect x="370.0" y="882.5" width="182.0" height="46.0" fill="#f5dde9" stroke="#a82a6e" stroke-width="1.6"/>
+<text x="382.0" y="902.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="12" fill="#a82a6e" font-weight="bold">not_observable</text>
+<text x="382.0" y="918.5" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="9.8" fill="#4a5b64">an output, not a negative</text>
+<line x1="354.0" y1="905.5" x2="368.0" y2="905.5" stroke="#a82a6e" stroke-width="1.6" marker-end="url(#a-caution)"/>
+<rect x="36.0" y="1400.0" width="591.5" height="104.0" fill="#dbeae5" stroke="#2c7361" stroke-width="1.5"/>
+<text x="50.0" y="1425.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#2c7361" font-weight="bold">Cross-region hold-out</text>
+<text x="50.0" y="1445.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">Train one basin, test another. The published drop is 67.8</text>
+<text x="50.0" y="1460.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">to 51.8 mIoU. Report that number, never the in-domain one.</text>
+<rect x="641.5" y="1400.0" width="591.5" height="104.0" fill="#dbeae5" stroke="#2c7361" stroke-width="1.5"/>
+<text x="655.5" y="1425.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#2c7361" font-weight="bold">False alarms per 1000 km²</text>
+<text x="655.5" y="1445.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">At fixed recall. The number that decides whether an</text>
+<text x="655.5" y="1460.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">operator would actually run the system on a live feed.</text>
+<rect x="1247.0" y="1400.0" width="591.5" height="104.0" fill="#dbeae5" stroke="#2c7361" stroke-width="1.5"/>
+<text x="1261.0" y="1425.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#2c7361" font-weight="bold">Wind-stratified curves</text>
+<text x="1261.0" y="1445.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">Precision and recall against the physical variable that</text>
+<text x="1261.0" y="1460.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">governs detectability, not pooled across all conditions.</text>
+<rect x="1852.5" y="1400.0" width="591.5" height="104.0" fill="#dbeae5" stroke="#2c7361" stroke-width="1.5"/>
+<text x="1866.5" y="1425.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="13.5" fill="#2c7361" font-weight="bold">Synthetic closed loop</text>
+<text x="1866.5" y="1445.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">Real AIS track → simulated discharge → rendered scene →</text>
+<text x="1866.5" y="1460.5" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">full backward pipeline. Gives recall@rank-K that no public</text>
+<text x="1866.5" y="1476.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">dataset provides.</text>
+<line x1="36.0" y1="1518.0" x2="2444.0" y2="1518.0" stroke="#c0cac8" stroke-width="1"/>
+<rect x="36.0" y="1539.0" width="30.0" height="16.0" fill="#ffffff" stroke="#c0cac8" stroke-width="1.2"/>
+<rect x="36" y="1539" width="3.5" height="16" fill="#1a6485"/>
+<text x="75.0" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">process step</text>
+<rect x="157.2" y="1539.0" width="30.0" height="16.0" fill="#dbe9ef" stroke="#1a6485" stroke-width="2.2"/>
+<text x="196.2" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">decisive mechanism</text>
+<rect x="315.0" y="1539.0" width="30.0" height="16.0" fill="#ffffff" stroke="#1a6485" stroke-width="1.8" stroke-dasharray="5 4"/>
+<text x="354.0" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">data artifact</text>
+<rect x="442.3" y="1539.0" width="30.0" height="16.0" fill="#eae5d7" stroke="#b9ac8c" stroke-width="1.2"/>
+<text x="481.3" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">external source</text>
+<rect x="581.8" y="1539.0" width="30.0" height="16.0" fill="#dbeae5" stroke="#2c7361" stroke-width="1.5"/>
+<text x="620.8" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">evaluation</text>
+<line x1="690.8" y1="1547.0" x2="724.8" y2="1547.0" stroke="#15212b" stroke-width="2.2" marker-end="url(#a-ink)"/>
+<text x="733.8" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">data flow</text>
+<line x1="797.7" y1="1547.0" x2="831.7" y2="1547.0" stroke="#a82a6e" stroke-width="3" marker-end="url(#a-caution)"/>
+<text x="840.7" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">feedback: joint inference</text>
+<line x1="1002.2" y1="1547.0" x2="1036.2" y2="1547.0" stroke="#2f4a57" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#a-steel)"/>
+<text x="1045.2" y="1551.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" fill="#4a5b64">label bootstrap</text>
+<text x="36.0" y="1592.0" font-family="DejaVu Sans, Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.8" fill="#7d8d94">Deliberately not claimed:  damping ratio is not an oil-type classifier  ·  CMOD needs a wind direction a single image cannot supply  ·  attribution is a calibrated ranking, never a verdict</text>
+<text x="2444.0" y="1592.0" font-family="DejaVu Sans Mono, IBM Plex Mono, Menlo, Consolas, monospace" font-size="11.5" fill="#7d8d94" text-anchor="end">Rev. 1  ·  Stage 1 built and tested  ·  see decisions.md</text>
+</svg>
